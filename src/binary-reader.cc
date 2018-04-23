@@ -1413,7 +1413,6 @@ Result BinaryReader::ReadRelocSection(Offset section_size) {
   CALLBACK(BeginRelocSection, section_size);
   uint32_t section_index;
   CHECK_RESULT(ReadU32Leb128(&section_index, "section index"));
-  string_view section_name;
   Index num_relocs;
   CHECK_RESULT(ReadCount(&num_relocs, "relocation count"));
   CALLBACK(OnRelocCount, num_relocs, section_index);
